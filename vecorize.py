@@ -18,7 +18,8 @@ class FrequentPatternVectorizor:
         job_queue = []
         print(len(self.docs))
         for index, lines in enumerate(self.docs):
-            print(index)
+            if index % 1000 ==0:
+                print("processed "+str(index)+" documents") 
             job_queue.append((index, lines))
             if len(job_queue) == poolsize:
 
